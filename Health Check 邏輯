@@ -132,6 +132,13 @@ sudo apt-get update
 sudo apt-get install docker.io -y
 systemctl enable docker
 
+cat >>/etc/hosts<<EOF
+10.140.15.217 k8s-master
+10.140.15.218 k8s-node-1
+10.140.15.219 k8s-node-2
+10.140.15.221 k8s-node-3
+EOF
+
 sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
