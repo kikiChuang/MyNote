@@ -142,7 +142,7 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
 kubeadm init --apiserver-advertise-address=172.31.40.255 --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU
-
+--pod-network-cidr=10.244.0.0/16
 
 kubeadm join 172.31.40.255:6443 --token 1x4q5o.ofuzgns95h94iuvr \
     --discovery-token-ca-cert-hash sha256:9828df451588e9556a6d8a0255e0cb2b397bcc16ef834fdb8800707459efc199 
